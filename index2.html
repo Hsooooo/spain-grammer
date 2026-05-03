@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ESPAÑOL 문법 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Sans:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f13;
+    --surface: #1a1a22;
+    --surface2: #22222e;
+    --border: #2e2e3e;
+    --accent1: #ff6b6b;
+    --accent2: #ffd166;
+    --accent3: #06d6a0;
+    --accent4: #74b9ff;
+    --accent5: #a29bfe;
+    --text: #e8e8f0;
+    --text2: #9999b0;
+    --text3: #6666808;
+    --yo: #ff6b6b22;
+    --tu: #ffd16622;
+    --el: #06d6a022;
+    --nos: #74b9ff22;
+    --vos: #a29bfe22;
+    --ell: #ff9f4322;
+  }
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+background: var(–bg);
+color: var(–text);
+font-family: ‘DM Sans’, ‘Noto Sans KR’, sans-serif;
+font-size: 14px;
+line-height: 1.5;
+min-height: 100vh;
+}
+
+/* HEADER */
+.app-header {
+background: linear-gradient(135deg, #1a0a2e 0%, #0f0f13 60%);
+padding: 20px 16px 0;
+border-bottom: 1px solid var(–border);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.app-title {
+display: flex;
+align-items: baseline;
+gap: 8px;
+margin-bottom: 14px;
+}
+
+.app-title h1 {
+font-family: ‘Space Mono’, monospace;
+font-size: 22px;
+font-weight: 700;
+color: var(–accent1);
+letter-spacing: -0.5px;
+}
+
+.app-title span {
+font-size: 11px;
+color: var(–text2);
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+/* TAB NAV */
+.tab-nav {
+display: flex;
+gap: 2px;
+overflow-x: auto;
+scrollbar-width: none;
+padding-bottom: 0;
+}
+
+.tab-nav::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+flex-shrink: 0;
+padding: 8px 14px;
+border: none;
+background: transparent;
+color: var(–text2);
+font-family: ‘Noto Sans KR’, sans-serif;
+font-size: 12px;
+cursor: pointer;
+border-bottom: 2px solid transparent;
+transition: all 0.2s;
+white-space: nowrap;
+}
+
+.tab-btn.active {
+color: var(–text);
+border-bottom-color: var(–accent1);
+}
+
+.tab-btn:hover { color: var(–text); }
+
+/* CONTENT */
+.content {
+padding: 16px;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* SECTION TITLE */
+.section-title {
+font-family: ‘Space Mono’, monospace;
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–accent1);
+margin-bottom: 12px;
+padding-left: 2px;
+}
+
+/* CARD */
+.card {
+background: var(–surface);
+border: 1px solid var(–border);
+border-radius: 12px;
+padding: 14px;
+margin-bottom: 12px;
+}
+
+.card-title {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 13px;
+font-weight: 600;
+color: var(–text2);
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 10px;
+}
+
+/* PRONOUN GRID */
+.pronoun-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 6px;
+}
+
+.pronoun-item {
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 8px 10px;
+border-radius: 8px;
+background: var(–surface2);
+}
+
+.pronoun-sp {
+font-family: ‘DM Sans’, sans-serif;
+font-weight: 600;
+font-size: 15px;
+min-width: 60px;
+}
+
+.pronoun-kr {
+font-size: 12px;
+color: var(–text2);
+}
+
+/* CONJ TABLE */
+.conj-table {
+width: 100%;
+border-collapse: collapse;
+}
+
+.conj-table th {
+font-size: 10px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(–text2);
+padding: 6px 8px;
+text-align: left;
+border-bottom: 1px solid var(–border);
+}
+
+.conj-table td {
+padding: 7px 8px;
+font-size: 13px;
+border-bottom: 1px solid var(–border);
+vertical-align: middle;
+}
+
+.conj-table tr:last-child td { border-bottom: none; }
+
+.conj-table tr.row-yo td { background: var(–yo); }
+.conj-table tr.row-tu td { background: var(–tu); }
+.conj-table tr.row-el td { background: var(–el); }
+.conj-table tr.row-nos td { background: var(–nos); }
+.conj-table tr.row-vos td { background: var(–vos); }
+.conj-table tr.row-ell td { background: var(–ell); }
+
+.sp { font-family: ‘DM Sans’, sans-serif; font-style: italic; color: var(–accent4); font-weight: 500; }
+.kr { font-size: 11px; color: var(–text2); }
+
+.subj-label {
+font-size: 11px;
+color: var(–text2);
+}
+
+.subj-sp {
+font-family: ‘DM Sans’, sans-serif;
+font-weight: 600;
+font-size: 13px;
+}
+
+/* TENSE TABS */
+.tense-tabs {
+display: flex;
+gap: 4px;
+margin-bottom: 10px;
+flex-wrap: wrap;
+}
+
+.tense-btn {
+padding: 4px 10px;
+border-radius: 20px;
+border: 1px solid var(–border);
+background: transparent;
+color: var(–text2);
+font-size: 11px;
+cursor: pointer;
+font-family: ‘Noto Sans KR’, sans-serif;
+transition: all 0.15s;
+}
+
+.tense-btn.active {
+background: var(–accent1);
+border-color: var(–accent1);
+color: #fff;
+}
+
+.tense-panel { display: none; }
+.tense-panel.active { display: block; }
+
+/* VERB GROUP TABS */
+.verb-tabs {
+display: flex;
+gap: 4px;
+margin-bottom: 10px;
+}
+
+.verb-btn {
+flex: 1;
+padding: 5px;
+border-radius: 8px;
+border: 1px solid var(–border);
+background: transparent;
+color: var(–text2);
+font-size: 12px;
+cursor: pointer;
+font-family: ‘Space Mono’, monospace;
+transition: all 0.15s;
+text-align: center;
+}
+
+.verb-btn.active {
+background: var(–surface2);
+border-color: var(–accent3);
+color: var(–accent3);
+}
+
+.verb-panel { display: none; }
+.verb-panel.active { display: block; }
+
+/* VERB SELECTOR (within each panel) */
+.verb-selector {
+display: flex;
+gap: 6px;
+margin-bottom: 12px;
+}
+
+.vsel-btn {
+flex: 1;
+padding: 8px 6px;
+border-radius: 10px;
+border: 1px solid var(–border);
+background: var(–surface2);
+color: var(–text2);
+font-size: 12px;
+cursor: pointer;
+font-family: ‘DM Sans’, sans-serif;
+transition: all 0.15s;
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2px;
+}
+
+.vsel-btn .vsel-name {
+font-family: ‘Space Mono’, monospace;
+font-size: 13px;
+font-weight: 700;
+font-style: italic;
+}
+
+.vsel-btn .vsel-mean {
+font-size: 10px;
+color: var(–text2);
+}
+
+.vsel-btn.active {
+border-color: currentColor;
+}
+
+.vsel-btn.ar-sel.active { background: #ff6b6b1a; color: var(–accent1); border-color: var(–accent1); }
+.vsel-btn.er-sel.active { background: #06d6a01a; color: var(–accent3); border-color: var(–accent3); }
+.vsel-btn.ir-sel.active { background: #74b9ff1a; color: var(–accent4); border-color: var(–accent4); }
+
+.verb-instance { display: none; }
+.verb-instance.active { display: block; }
+
+/* BADGE */
+.badge {
+display: inline-block;
+padding: 2px 7px;
+border-radius: 20px;
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 0.5px;
+vertical-align: middle;
+}
+
+.badge-ar { background: #ff6b6b33; color: var(–accent1); border: 1px solid #ff6b6b44; }
+.badge-er { background: #06d6a033; color: var(–accent3); border: 1px solid #06d6a044; }
+.badge-ir { background: #74b9ff33; color: var(–accent4); border: 1px solid #74b9ff44; }
+.badge-irr { background: #ffd16633; color: var(–accent2); border: 1px solid #ffd16644; }
+.badge-tip { background: #a29bfe33; color: var(–accent5); border: 1px solid #a29bfe44; }
+
+/* DEMO TABLE */
+.demo-table-wrap { overflow-x: auto; }
+
+.demo-table {
+width: 100%;
+border-collapse: collapse;
+min-width: 280px;
+}
+
+.demo-table th {
+background: var(–surface2);
+font-size: 10px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(–text2);
+padding: 7px 8px;
+text-align: center;
+border: 1px solid var(–border);
+}
+
+.demo-table td {
+padding: 7px 8px;
+text-align: center;
+border: 1px solid var(–border);
+font-size: 13px;
+}
+
+.demo-table td .sp { display: block; }
+.demo-table td .kr { display: block; margin-top: 1px; }
+
+.demo-row-label {
+background: var(–surface2);
+font-size: 11px;
+color: var(–text2);
+font-weight: 600;
+text-align: left !important;
+}
+
+/* PILL LIST */
+.pill-list {
+display: flex;
+flex-wrap: wrap;
+gap: 7px;
+margin-top: 6px;
+}
+
+.pill {
+display: flex;
+align-items: center;
+gap: 6px;
+background: var(–surface2);
+border: 1px solid var(–border);
+border-radius: 8px;
+padding: 6px 10px;
+}
+
+.pill .sp { font-size: 14px; font-style: italic; }
+.pill .kr { font-size: 11px; color: var(–text2); }
+
+/* GENDER GRID */
+.gender-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.gender-card {
+border-radius: 10px;
+padding: 12px;
+}
+
+.gender-card.masc {
+background: #74b9ff11;
+border: 1px solid #74b9ff33;
+}
+
+.gender-card.fem {
+background: #ff6b6b11;
+border: 1px solid #ff6b6b33;
+}
+
+.gender-card-title {
+font-size: 11px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+
+.gender-card.masc .gender-card-title { color: var(–accent4); }
+.gender-card.fem .gender-card-title { color: var(–accent1); }
+
+.gender-item {
+font-size: 12px;
+padding: 3px 0;
+border-bottom: 1px solid var(–border);
+display: flex;
+justify-content: space-between;
+}
+
+.gender-item:last-child { border-bottom: none; }
+.gender-item .sp { font-size: 13px; }
+.gender-item .kr { font-size: 11px; color: var(–text2); margin-top: 1px; }
+
+/* RULE BOX */
+.rule-box {
+background: var(–surface2);
+border-left: 3px solid var(–accent2);
+border-radius: 0 8px 8px 0;
+padding: 10px 12px;
+margin-bottom: 8px;
+}
+
+.rule-title {
+font-size: 11px;
+font-weight: 600;
+color: var(–accent2);
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-bottom: 5px;
+}
+
+.rule-text {
+font-size: 12px;
+color: var(–text);
+line-height: 1.6;
+}
+
+.rule-text .sp { font-style: italic; color: var(–accent4); font-size: 13px; }
+
+/* TIP BOX */
+.tip-box {
+background: #a29bfe11;
+border: 1px solid #a29bfe33;
+border-radius: 10px;
+padding: 10px 12px;
+margin-bottom: 10px;
+display: flex;
+gap: 8px;
+align-items: flex-start;
+}
+
+.tip-icon { font-size: 16px; flex-shrink: 0; }
+
+.tip-text { font-size: 12px; color: var(–text2); line-height: 1.6; }
+.tip-text .sp { color: var(–accent4); font-style: italic; font-size: 13px; font-family: ‘DM Sans’, sans-serif; }
+.tip-text strong { color: var(–text); }
+
+/* PREP TABLE */
+.prep-list { display: flex; flex-direction: column; gap: 6px; }
+
+.prep-item {
+display: flex;
+gap: 10px;
+align-items: flex-start;
+background: var(–surface2);
+border-radius: 8px;
+padding: 8px 10px;
+}
+
+.prep-sp {
+font-family: ‘DM Sans’, sans-serif;
+font-style: italic;
+font-weight: 600;
+font-size: 15px;
+color: var(–accent3);
+min-width: 55px;
+flex-shrink: 0;
+}
+
+.prep-content { flex: 1; }
+
+.prep-kr { font-size: 12px; color: var(–text); margin-bottom: 3px; }
+
+.prep-ex { font-size: 11px; color: var(–text2); font-style: italic; }
+
+/* NUMBER TABLE */
+.number-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 5px;
+}
+
+.number-item {
+background: var(–surface2);
+border-radius: 7px;
+padding: 6px 8px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.number-n { font-family: ‘Space Mono’, monospace; font-size: 13px; color: var(–accent2); }
+.number-sp { font-size: 13px; font-style: italic; font-family: ‘DM Sans’, sans-serif; }
+
+/* QUESTION WORDS */
+.qw-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 6px;
+}
+
+.qw-item {
+background: var(–surface2);
+border-radius: 8px;
+padding: 8px 10px;
+border-left: 3px solid var(–accent5);
+}
+
+.qw-sp { font-family: ‘DM Sans’, sans-serif; font-weight: 600; font-size: 15px; color: var(–accent5); }
+.qw-kr { font-size: 11px; color: var(–text2); margin-top: 2px; }
+.qw-ex { font-size: 11px; color: var(–text2); font-style: italic; margin-top: 4px; }
+
+/* IRREGULAR VERB */
+.irr-verb-grid { display: flex; flex-direction: column; gap: 10px; }
+
+.irr-verb-card {
+background: var(–surface2);
+border-radius: 10px;
+overflow: hidden;
+}
+
+.irr-verb-header {
+background: #ffd16611;
+border-bottom: 1px solid var(–border);
+padding: 8px 12px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.irr-verb-name {
+font-family: ‘Space Mono’, monospace;
+font-size: 16px;
+font-weight: 700;
+color: var(–accent2);
+}
+
+.irr-verb-mean { font-size: 12px; color: var(–text2); }
+
+.irr-conj-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1px;
+background: var(–border);
+}
+
+.irr-conj-cell {
+background: var(–surface2);
+padding: 7px 10px;
+text-align: center;
+}
+
+.irr-conj-cell .subj { font-size: 10px; color: var(–text2); }
+.irr-conj-cell .form {
+font-family: ‘DM Sans’, sans-serif;
+font-style: italic;
+font-size: 13px;
+color: var(–text);
+font-weight: 500;
+}
+
+/* SER vs ESTAR */
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.vs-card {
+border-radius: 10px;
+padding: 12px;
+}
+
+.vs-card.ser { background: #ff6b6b0d; border: 1px solid #ff6b6b33; }
+.vs-card.estar { background: #06d6a00d; border: 1px solid #06d6a033; }
+
+.vs-title { font-family: ‘Space Mono’, monospace; font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.vs-card.ser .vs-title { color: var(–accent1); }
+.vs-card.estar .vs-title { color: var(–accent3); }
+
+.vs-subtitle { font-size: 11px; color: var(–text2); margin-bottom: 10px; }
+
+.vs-uses { list-style: none; }
+
+.vs-use-item { font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(–border); }
+.vs-use-item:last-child { border-bottom: none; }
+.vs-use-item .ex { font-size: 11px; font-style: italic; color: var(–text2); display: block; margin-top: 1px; }
+
+/* SECTION DIVIDER */
+.divider {
+height: 1px;
+background: var(–border);
+margin: 16px 0;
+}
+
+/* HIGHLIGHT */
+.hl { color: var(–accent1); font-weight: 600; }
+.hl2 { color: var(–accent2); font-weight: 600; }
+.hl3 { color: var(–accent3); font-weight: 600; }
+.hl4 { color: var(–accent4); font-weight: 600; }
+
+/* SENTENCE EXAMPLE */
+.sentence-list { display: flex; flex-direction: column; gap: 8px; }
+
+.sentence-item {
+background: var(–surface2);
+border-radius: 8px;
+padding: 10px 12px;
+}
+
+.sentence-sp { font-family: ‘DM Sans’, sans-serif; font-style: italic; font-size: 14px; color: var(–text); }
+.sentence-kr { font-size: 12px; color: var(–text2); margin-top: 3px; }
+
+/* POSSESSIVE TABLE */
+.poss-table-wrap { overflow-x: auto; }
+
+.poss-table {
+width: 100%;
+border-collapse: collapse;
+min-width: 300px;
+}
+
+.poss-table th {
+background: var(–surface2);
+font-size: 10px;
+letter-spacing: 1px;
+text-transform: uppercase;
+color: var(–text2);
+padding: 7px 8px;
+text-align: center;
+border: 1px solid var(–border);
+}
+
+.poss-table td {
+padding: 7px 8px;
+text-align: center;
+border: 1px solid var(–border);
+font-size: 13px;
+font-family: ‘DM Sans’, sans-serif;
+font-style: italic;
+}
+
+.poss-table .row-label {
+font-style: normal;
+font-family: ‘Noto Sans KR’, sans-serif;
+font-size: 11px;
+color: var(–text2);
+text-align: left;
+background: var(–surface2);
+}
+
+.poss-table .poss-sp { color: var(–accent4); }
+.poss-table .poss-kr { display: block; font-size: 10px; color: var(–text2); font-style: normal; margin-top: 1px; }
+
+/* ACCENT BOX */
+.accent-box {
+background: #06d6a011;
+border: 1px solid #06d6a033;
+border-radius: 10px;
+padding: 10px 12px;
+margin-bottom: 10px;
+}
+
+.accent-title { font-size: 11px; color: var(–accent3); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+</style>
+
+</head>
+<body>
+
+<div class="app-header">
+  <div class="app-title">
+    <h1>ESPAÑOL</h1>
+    <span>문법 정리</span>
+  </div>
+  <nav class="tab-nav" id="mainNav">
+    <button class="tab-btn active" onclick="showTab('pronouns')">대명사</button>
+    <button class="tab-btn" onclick="showTab('gender')">성·수</button>
+    <button class="tab-btn" onclick="showTab('demo')">지시어</button>
+    <button class="tab-btn" onclick="showTab('poss')">소유어</button>
+    <button class="tab-btn" onclick="showTab('question')">의문사</button>
+    <button class="tab-btn" onclick="showTab('verbs')">동사활용</button>
+    <button class="tab-btn" onclick="showTab('irregular')">불규칙</button>
+    <button class="tab-btn" onclick="showTab('serstar')">ser/estar</button>
+    <button class="tab-btn" onclick="showTab('prep')">전치사</button>
+    <button class="tab-btn" onclick="showTab('numbers')">숫자</button>
+    <button class="tab-btn" onclick="showTab('extra')">+ 더보기</button>
+  </nav>
+</div>
+
+<div class="content">
+
+<!-- ===== 대명사 ===== -->
+
+<div class="tab-panel active" id="tab-pronouns">
+  <p class="section-title">인칭대명사</p>
+
+  <div class="card">
+    <div class="card-title">주격 (주어)</div>
+    <div class="pronoun-grid">
+      <div class="pronoun-item" style="background:#ff6b6b11;border:1px solid #ff6b6b22">
+        <span class="pronoun-sp" style="color:var(--accent1)">yo</span>
+        <span class="pronoun-kr">나</span>
+      </div>
+      <div class="pronoun-item" style="background:#ffd16611;border:1px solid #ffd16622">
+        <span class="pronoun-sp" style="color:var(--accent2)">tú</span>
+        <span class="pronoun-kr">너</span>
+      </div>
+      <div class="pronoun-item" style="background:#06d6a011;border:1px solid #06d6a022">
+        <span class="pronoun-sp" style="color:var(--accent3)">él / ella</span>
+        <span class="pronoun-kr">그 / 그녀</span>
+      </div>
+      <div class="pronoun-item" style="background:#06d6a011;border:1px solid #06d6a022">
+        <span class="pronoun-sp" style="color:var(--accent3)">usted</span>
+        <span class="pronoun-kr">당신(존댓말)</span>
+      </div>
+      <div class="pronoun-item" style="background:#74b9ff11;border:1px solid #74b9ff22">
+        <span class="pronoun-sp" style="color:var(--accent4)">nosotros/as</span>
+        <span class="pronoun-kr">우리</span>
+      </div>
+      <div class="pronoun-item" style="background:#a29bfe11;border:1px solid #a29bfe22">
+        <span class="pronoun-sp" style="color:var(--accent5)">vosotros/as</span>
+        <span class="pronoun-kr">너희(스페인)</span>
+      </div>
+      <div class="pronoun-item" style="background:#ff9f4311;border:1px solid #ff9f4322">
+        <span class="pronoun-sp" style="color:#ff9f43">ellos / ellas</span>
+        <span class="pronoun-kr">그들 / 그녀들</span>
+      </div>
+      <div class="pronoun-item" style="background:#ff9f4311;border:1px solid #ff9f4322">
+        <span class="pronoun-sp" style="color:#ff9f43">ustedes</span>
+        <span class="pronoun-kr">당신들</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <span class="tip-icon">💡</span>
+    <span class="tip-text"><strong>스페인어는 주어 생략 가능!</strong> 동사 형태만으로 주어를 알 수 있어서 보통 생략해요. <span class="sp">Hablo español.</span> = 나는 스페인어를 해요.</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">목적격 대명사</div>
+    <table class="conj-table">
+      <tr><th>주격</th><th>직접목적격</th><th>간접목적격</th><th>전치사 뒤</th></tr>
+      <tr class="row-yo">
+        <td><span class="subj-label">나</span></td>
+        <td><span class="sp">me</span></td>
+        <td><span class="sp">me</span></td>
+        <td><span class="sp">mí</span></td>
+      </tr>
+      <tr class="row-tu">
+        <td><span class="subj-label">너</span></td>
+        <td><span class="sp">te</span></td>
+        <td><span class="sp">te</span></td>
+        <td><span class="sp">ti</span></td>
+      </tr>
+      <tr class="row-el">
+        <td><span class="subj-label">그/그녀/당신</span></td>
+        <td><span class="sp">lo / la</span></td>
+        <td><span class="sp">le</span></td>
+        <td><span class="sp">él/ella/usted</span></td>
+      </tr>
+      <tr class="row-nos">
+        <td><span class="subj-label">우리</span></td>
+        <td><span class="sp">nos</span></td>
+        <td><span class="sp">nos</span></td>
+        <td><span class="sp">nosotros</span></td>
+      </tr>
+      <tr class="row-vos">
+        <td><span class="subj-label">너희</span></td>
+        <td><span class="sp">os</span></td>
+        <td><span class="sp">os</span></td>
+        <td><span class="sp">vosotros</span></td>
+      </tr>
+      <tr class="row-ell">
+        <td><span class="subj-label">그들/당신들</span></td>
+        <td><span class="sp">los / las</span></td>
+        <td><span class="sp">les</span></td>
+        <td><span class="sp">ellos/ellas</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="tip-box">
+    <span class="tip-icon">📍</span>
+    <span class="tip-text">목적격 대명사는 동사 <strong>앞</strong>에 위치해요. <span class="sp">Te quiero.</span> (너를 사랑해) / <span class="sp">Lo veo.</span> (그것을 봐)</span>
+  </div>
+</div>
+
+<!-- ===== 성·수 ===== -->
+
+<div class="tab-panel" id="tab-gender">
+  <p class="section-title">명사의 성(性)과 수(數)</p>
+
+  <div class="gender-grid">
+    <div class="gender-card masc">
+      <div class="gender-card-title">남성 🔵</div>
+      <div class="gender-item"><span class="sp">el</span><span class="kr">단수 관사</span></div>
+      <div class="gender-item"><span class="sp">los</span><span class="kr">복수 관사</span></div>
+      <div class="gender-item"><span class="sp">-o</span><span class="kr">주로 남성</span></div>
+      <div class="gender-item"><span class="sp">-or</span><span class="kr">주로 남성</span></div>
+      <div class="gender-item"><span class="sp">-ema</span><span class="kr">예외 남성</span></div>
+    </div>
+    <div class="gender-card fem">
+      <div class="gender-card-title">여성 🔴</div>
+      <div class="gender-item"><span class="sp">la</span><span class="kr">단수 관사</span></div>
+      <div class="gender-item"><span class="sp">las</span><span class="kr">복수 관사</span></div>
+      <div class="gender-item"><span class="sp">-a</span><span class="kr">주로 여성</span></div>
+      <div class="gender-item"><span class="sp">-ción</span><span class="kr">주로 여성</span></div>
+      <div class="gender-item"><span class="sp">-dad</span><span class="kr">주로 여성</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="rule-box">
+    <div class="rule-title">복수형 만들기</div>
+    <div class="rule-text">
+      모음으로 끝나면 <span class="sp">+s</span> &nbsp;→&nbsp; <span class="sp">casa → casas</span><br>
+      자음으로 끝나면 <span class="sp">+es</span> &nbsp;→&nbsp; <span class="sp">ciudad → ciudades</span><br>
+      <span class="sp">-z</span>로 끝나면 <span class="sp">z→c+es</span> → <span class="sp">vez → veces</span>
+    </div>
+  </div>
+
+  <div class="rule-box" style="border-left-color:var(--accent3)">
+    <div class="rule-title" style="color:var(--accent3)">관사 (부정관사)</div>
+    <div class="rule-text">
+      남성: <span class="sp">un</span> (하나의) / <span class="sp">unos</span> (몇몇의)<br>
+      여성: <span class="sp">una</span> (하나의) / <span class="sp">unas</span> (몇몇의)<br>
+      예) <span class="sp">un libro</span> (책 한 권) / <span class="sp">una mesa</span> (테이블 하나)
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <span class="tip-icon">⚠️</span>
+    <span class="tip-text"><strong>예외 주의!</strong> <span class="sp">el agua</span>(물), <span class="sp">el arte</span>(예술)처럼 여성 명사인데 <strong>el</strong>을 쓰는 경우가 있어요 (발음 편의상).</span>
+  </div>
+</div>
+
+<!-- ===== 지시어 ===== -->
+
+<div class="tab-panel" id="tab-demo">
+  <p class="section-title">지시형용사 / 지시대명사</p>
+
+  <div class="tip-box">
+    <span class="tip-icon">📏</span>
+    <span class="tip-text"><strong>거리에 따라 구분!</strong> este(이) = 가까운 것, ese(그) = 중간 거리, aquel(저) = 먼 것</span>
+  </div>
+
+  <div class="demo-table-wrap">
+    <table class="demo-table">
+      <tr>
+        <th>거리</th>
+        <th>남성단수</th>
+        <th>여성단수</th>
+        <th>남성복수</th>
+        <th>여성복수</th>
+      </tr>
+      <tr>
+        <td class="demo-row-label">이 (가까이)</td>
+        <td><span class="sp">este</span><span class="kr">이 ~</span></td>
+        <td><span class="sp">esta</span><span class="kr">이 ~</span></td>
+        <td><span class="sp">estos</span><span class="kr">이 ~들</span></td>
+        <td><span class="sp">estas</span><span class="kr">이 ~들</span></td>
+      </tr>
+      <tr>
+        <td class="demo-row-label">그 (중간)</td>
+        <td><span class="sp">ese</span><span class="kr">그 ~</span></td>
+        <td><span class="sp">esa</span><span class="kr">그 ~</span></td>
+        <td><span class="sp">esos</span><span class="kr">그 ~들</span></td>
+        <td><span class="sp">esas</span><span class="kr">그 ~들</span></td>
+      </tr>
+      <tr>
+        <td class="demo-row-label">저 (멀리)</td>
+        <td><span class="sp">aquel</span><span class="kr">저 ~</span></td>
+        <td><span class="sp">aquella</span><span class="kr">저 ~</span></td>
+        <td><span class="sp">aquellos</span><span class="kr">저 ~들</span></td>
+        <td><span class="sp">aquellas</span><span class="kr">저 ~들</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sentence-list">
+    <div class="sentence-item">
+      <div class="sentence-sp">Este libro es interesante.</div>
+      <div class="sentence-kr">이 책은 재미있어요.</div>
+    </div>
+    <div class="sentence-item">
+      <div class="sentence-sp">¿Cuánto cuesta esa camisa?</div>
+      <div class="sentence-kr">그 셔츠 얼마예요?</div>
+    </div>
+    <div class="sentence-item">
+      <div class="sentence-sp">Aquella montaña es muy alta.</div>
+      <div class="sentence-kr">저 산은 아주 높아요.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 소유어 ===== -->
+
+<div class="tab-panel" id="tab-poss">
+  <p class="section-title">소유형용사 / 소유대명사</p>
+
+  <!-- 형용사 vs 대명사 개념 비교 -->
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+    <div style="background:var(--surface);border:1px solid var(--accent4);border-radius:10px;padding:10px 11px">
+      <div style="font-size:10px;color:var(--accent4);letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:5px">소유형용사</div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:5px">명사 앞에서 수식</div>
+      <div style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px;color:var(--text)">mi libro</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:2px">내 책</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--accent3);border-radius:10px;padding:10px 11px">
+      <div style="font-size:10px;color:var(--accent3);letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:5px">소유대명사</div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:5px">명사를 대체</div>
+      <div style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px;color:var(--text)">es mío</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:2px">내 거야</div>
+    </div>
+  </div>
+
+  <!-- 통합 표: 인칭별로 형용사·대명사 나란히 -->
+
+  <div class="card" style="padding:0;overflow:hidden">
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;min-width:360px">
+        <thead>
+          <tr>
+            <th rowspan="2" style="background:var(--surface2);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text2);padding:8px;text-align:left;border:1px solid var(--border);vertical-align:middle">인칭</th>
+            <th colspan="2" style="background:#74b9ff0d;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--accent4);padding:6px 8px;text-align:center;border:1px solid var(--border)">형용사<br><span style="font-size:9px;color:var(--text2);font-weight:400;letter-spacing:0">명사 앞</span></th>
+            <th colspan="2" style="background:#06d6a00d;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--accent3);padding:6px 8px;text-align:center;border:1px solid var(--border)">대명사<br><span style="font-size:9px;color:var(--text2);font-weight:400;letter-spacing:0">명사 대신</span></th>
+          </tr>
+          <tr>
+            <th style="background:#74b9ff08;font-size:10px;color:var(--text2);padding:5px 8px;text-align:center;border:1px solid var(--border)">단수</th>
+            <th style="background:#74b9ff08;font-size:10px;color:var(--text2);padding:5px 8px;text-align:center;border:1px solid var(--border)">복수</th>
+            <th style="background:#06d6a008;font-size:10px;color:var(--text2);padding:5px 8px;text-align:center;border:1px solid var(--border)">남/여 단수</th>
+            <th style="background:#06d6a008;font-size:10px;color:var(--text2);padding:5px 8px;text-align:center;border:1px solid var(--border)">남/여 복수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border:1px solid var(--border);padding:8px;font-size:11px;color:var(--text2)">나<br><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:10px">yo</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">mi</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">mis</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">mío / mía</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">míos / mías</span></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid var(--border);padding:8px;font-size:11px;color:var(--text2)">너<br><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:10px">tú</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">tu</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">tus</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">tuyo / tuya</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">tuyos / tuyas</span></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid var(--border);padding:8px;font-size:11px;color:var(--text2)">그/그녀<br>당신<br><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:10px">él/ella/Ud.</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">su</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">sus</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">suyo / suya</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">suyos / suyas</span></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid var(--border);padding:8px;font-size:11px;color:var(--text2)">우리<br><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:10px">nosotros</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">nuestro<br>nuestra</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">nuestros<br>nuestras</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">nuestro<br>nuestra</span><br><span style="font-size:9px;color:var(--text2)">형·대 동일</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">nuestros<br>nuestras</span><br><span style="font-size:9px;color:var(--text2)">형·대 동일</span></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid var(--border);padding:8px;font-size:11px;color:var(--text2)">너희<br><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:10px">vosotros</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">vuestro<br>vuestra</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">vuestros<br>vuestras</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">vuestro<br>vuestra</span><br><span style="font-size:9px;color:var(--text2)">형·대 동일</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">vuestros<br>vuestras</span><br><span style="font-size:9px;color:var(--text2)">형·대 동일</span></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid var(--border);padding:8px;font-size:11px;color:var(--text2)">그들<br>당신들<br><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:10px">ellos/Uds.</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">su</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">sus</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">suyo / suya</span></td>
+            <td style="border:1px solid var(--border);padding:8px;text-align:center"><span style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px">suyos / suyas</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tip-box" style="margin-top:12px">
+    <span class="tip-icon">⚠️</span>
+    <span class="tip-text"><strong>nuestro/vuestro</strong>는 형용사·대명사 형태가 같아요. 대신 대명사로 쓸 땐 문장 위치로 구분해요.<br>
+    <span class="sp">nuestra casa</span> (형용사) vs <span class="sp">La casa es nuestra.</span> (대명사)</span>
+  </div>
+
+  <!-- 예문 -->
+
+  <div class="divider"></div>
+  <p class="section-title" style="margin-bottom:10px">예문 비교</p>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="background:var(--surface);border-radius:8px;padding:10px 12px;border-left:3px solid var(--accent4)">
+      <div style="font-size:10px;color:var(--accent4);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">형용사</div>
+      <div style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">mi libro / tus amigos / nuestra casa</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:3px">내 책 / 너의 친구들 / 우리의 집</div>
+    </div>
+    <div style="background:var(--surface);border-radius:8px;padding:10px 12px;border-left:3px solid var(--accent3)">
+      <div style="font-size:10px;color:var(--accent3);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">대명사</div>
+      <div style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px">Este libro es mío.</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:3px">이 책은 내 거야.</div>
+      <div style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px;margin-top:6px">¿Es tuya esta mochila?</div>
+      <div style="font-size:11px;color:var(--text2);margin-top:3px">이 가방 너 거야?</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 의문사 ===== -->
+
+<div class="tab-panel" id="tab-question">
+  <p class="section-title">의문사</p>
+
+  <div class="tip-box">
+    <span class="tip-icon">✍️</span>
+    <span class="tip-text">스페인어 의문문은 앞에 <strong>¿</strong>, 뒤에 <strong>?</strong>를 써요!</span>
+  </div>
+
+  <div class="qw-grid">
+    <div class="qw-item">
+      <div class="qw-sp">¿qué?</div>
+      <div class="qw-kr">무엇 / 어떤</div>
+      <div class="qw-ex">¿Qué haces?<br>뭐 해?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿quién?</div>
+      <div class="qw-kr">누구 (단수)</div>
+      <div class="qw-ex">¿Quién es?<br>누구야?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿quiénes?</div>
+      <div class="qw-kr">누구 (복수)</div>
+      <div class="qw-ex">¿Quiénes son?<br>누구들이야?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿cómo?</div>
+      <div class="qw-kr">어떻게 / 어때</div>
+      <div class="qw-ex">¿Cómo estás?<br>어때?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿dónde?</div>
+      <div class="qw-kr">어디</div>
+      <div class="qw-ex">¿Dónde vives?<br>어디 살아?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿cuándo?</div>
+      <div class="qw-kr">언제</div>
+      <div class="qw-ex">¿Cuándo llegas?<br>언제 도착해?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿por qué?</div>
+      <div class="qw-kr">왜</div>
+      <div class="qw-ex">¿Por qué lloras?<br>왜 울어?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿cuánto?</div>
+      <div class="qw-kr">얼마나 / 얼마</div>
+      <div class="qw-ex">¿Cuánto es?<br>얼마예요?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿cuál?</div>
+      <div class="qw-kr">어느 것</div>
+      <div class="qw-ex">¿Cuál prefieres?<br>어떤 걸 좋아해?</div>
+    </div>
+    <div class="qw-item">
+      <div class="qw-sp">¿adónde?</div>
+      <div class="qw-kr">어디로</div>
+      <div class="qw-ex">¿Adónde vas?<br>어디 가?</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 동사활용 ===== -->
+
+<div class="tab-panel" id="tab-verbs">
+  <p class="section-title">규칙 동사 활용</p>
+
+  <div class="verb-tabs">
+    <button class="verb-btn active" onclick="showVerb('ar')">-AR형</button>
+    <button class="verb-btn" onclick="showVerb('er')">-ER형</button>
+    <button class="verb-btn" onclick="showVerb('ir')">-IR형</button>
+  </div>
+
+  <!-- ====== AR ====== -->
+
+  <div class="verb-panel active" id="vp-ar">
+    <div class="verb-selector">
+      <button class="vsel-btn ar-sel active" onclick="showVerbInst('ar','hablar',this)">
+        <span class="vsel-name">hablar</span>
+        <span class="vsel-mean">말하다</span>
+      </button>
+      <button class="vsel-btn ar-sel" onclick="showVerbInst('ar','trabajar',this)">
+        <span class="vsel-name">trabajar</span>
+        <span class="vsel-mean">일하다</span>
+      </button>
+    </div>
+
+```
+<!-- hablar -->
+<div class="verb-instance active" id="vi-ar-hablar">
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span class="badge badge-ar">-AR</span>
+      <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--accent1)">hablar</span>
+      <span style="font-size:12px;color:var(--text2)">말하다</span>
+    </div>
+    <div class="tense-tabs">
+      <button class="tense-btn active" onclick="showTense('ar_hablar','pres')">현재</button>
+      <button class="tense-btn" onclick="showTense('ar_hablar','imp')">불완료과거</button>
+      <button class="tense-btn" onclick="showTense('ar_hablar','pret')">단순과거</button>
+      <button class="tense-btn" onclick="showTense('ar_hablar','fut')">미래</button>
+    </div>
+    <div class="tense-panel active" id="ar_hablar-pres">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">hablo</span></td><td class="kr">-o</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">hablas</span></td><td class="kr">-as</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">habla</span></td><td class="kr">-a</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">hablamos</span></td><td class="kr">-amos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">habláis</span></td><td class="kr">-áis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">hablan</span></td><td class="kr">-an</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ar_hablar-imp">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">hablaba</span></td><td class="kr">-aba</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">hablabas</span></td><td class="kr">-abas</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">hablaba</span></td><td class="kr">-aba</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">hablábamos</span></td><td class="kr">-ábamos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">hablabais</span></td><td class="kr">-abais</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">hablaban</span></td><td class="kr">-aban</td></tr>
+      </table>
+      <div class="tip-box" style="margin-top:10px"><span class="tip-icon">📖</span><span class="tip-text"><strong>불완료과거</strong>: 과거의 반복적 행동, 상태, 진행 중이던 행동에 사용</span></div>
+    </div>
+    <div class="tense-panel" id="ar_hablar-pret">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">hablé</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">hablaste</span></td><td class="kr">-aste</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">habló</span></td><td class="kr">-ó</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">hablamos</span></td><td class="kr">-amos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">hablasteis</span></td><td class="kr">-asteis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">hablaron</span></td><td class="kr">-aron</td></tr>
+      </table>
+      <div class="tip-box" style="margin-top:10px"><span class="tip-icon">📖</span><span class="tip-text"><strong>단순과거</strong>: 과거의 완결된 행동에 사용</span></div>
+    </div>
+    <div class="tense-panel" id="ar_hablar-fut">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">hablaré</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">hablarás</span></td><td class="kr">-ás</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">hablará</span></td><td class="kr">-á</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">hablaremos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">hablaréis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">hablarán</span></td><td class="kr">-án</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- trabajar -->
+<div class="verb-instance" id="vi-ar-trabajar">
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span class="badge badge-ar">-AR</span>
+      <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--accent1)">trabajar</span>
+      <span style="font-size:12px;color:var(--text2)">일하다</span>
+    </div>
+    <div class="tip-box" style="margin-bottom:10px">
+      <span class="tip-icon">💡</span>
+      <span class="tip-text">hablar과 <strong>완전히 동일한 어미 패턴</strong>이에요. 어간 <span class="sp">trabaj-</span>에 같은 어미를 붙이면 돼요!</span>
+    </div>
+    <div class="tense-tabs">
+      <button class="tense-btn active" onclick="showTense('ar_trab','pres')">현재</button>
+      <button class="tense-btn" onclick="showTense('ar_trab','imp')">불완료과거</button>
+      <button class="tense-btn" onclick="showTense('ar_trab','pret')">단순과거</button>
+      <button class="tense-btn" onclick="showTense('ar_trab','fut')">미래</button>
+    </div>
+    <div class="tense-panel active" id="ar_trab-pres">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">trabajo</span></td><td class="kr">-o</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">trabajas</span></td><td class="kr">-as</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">trabaja</span></td><td class="kr">-a</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">trabajamos</span></td><td class="kr">-amos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">trabajáis</span></td><td class="kr">-áis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">trabajan</span></td><td class="kr">-an</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ar_trab-imp">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">trabajaba</span></td><td class="kr">-aba</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">trabajabas</span></td><td class="kr">-abas</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">trabajaba</span></td><td class="kr">-aba</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">trabajábamos</span></td><td class="kr">-ábamos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">trabajabais</span></td><td class="kr">-abais</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">trabajaban</span></td><td class="kr">-aban</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ar_trab-pret">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">trabajé</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">trabajaste</span></td><td class="kr">-aste</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">trabajó</span></td><td class="kr">-ó</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">trabajamos</span></td><td class="kr">-amos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">trabajasteis</span></td><td class="kr">-asteis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">trabajaron</span></td><td class="kr">-aron</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ar_trab-fut">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">trabajaré</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">trabajarás</span></td><td class="kr">-ás</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">trabajará</span></td><td class="kr">-á</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">trabajaremos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">trabajaréis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">trabajarán</span></td><td class="kr">-án</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- ====== ER ====== -->
+
+  <div class="verb-panel" id="vp-er">
+    <div class="verb-selector">
+      <button class="vsel-btn er-sel active" onclick="showVerbInst('er','comer',this)">
+        <span class="vsel-name">comer</span>
+        <span class="vsel-mean">먹다</span>
+      </button>
+      <button class="vsel-btn er-sel" onclick="showVerbInst('er','beber',this)">
+        <span class="vsel-name">beber</span>
+        <span class="vsel-mean">마시다</span>
+      </button>
+    </div>
+
+```
+<!-- comer -->
+<div class="verb-instance active" id="vi-er-comer">
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span class="badge badge-er">-ER</span>
+      <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--accent3)">comer</span>
+      <span style="font-size:12px;color:var(--text2)">먹다</span>
+    </div>
+    <div class="tense-tabs">
+      <button class="tense-btn active" onclick="showTense('er_comer','pres')">현재</button>
+      <button class="tense-btn" onclick="showTense('er_comer','imp')">불완료과거</button>
+      <button class="tense-btn" onclick="showTense('er_comer','pret')">단순과거</button>
+      <button class="tense-btn" onclick="showTense('er_comer','fut')">미래</button>
+    </div>
+    <div class="tense-panel active" id="er_comer-pres">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">como</span></td><td class="kr">-o</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">comes</span></td><td class="kr">-es</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">come</span></td><td class="kr">-e</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">comemos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">coméis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">comen</span></td><td class="kr">-en</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="er_comer-imp">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">comía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">comías</span></td><td class="kr">-ías</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">comía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">comíamos</span></td><td class="kr">-íamos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">comíais</span></td><td class="kr">-íais</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">comían</span></td><td class="kr">-ían</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="er_comer-pret">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">comí</span></td><td class="kr">-í</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">comiste</span></td><td class="kr">-iste</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">comió</span></td><td class="kr">-ió</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">comimos</span></td><td class="kr">-imos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">comisteis</span></td><td class="kr">-isteis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">comieron</span></td><td class="kr">-ieron</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="er_comer-fut">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">comeré</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">comerás</span></td><td class="kr">-ás</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">comerá</span></td><td class="kr">-á</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">comeremos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">comeréis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">comerán</span></td><td class="kr">-án</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- beber -->
+<div class="verb-instance" id="vi-er-beber">
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span class="badge badge-er">-ER</span>
+      <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--accent3)">beber</span>
+      <span style="font-size:12px;color:var(--text2)">마시다</span>
+    </div>
+    <div class="tip-box" style="margin-bottom:10px">
+      <span class="tip-icon">💡</span>
+      <span class="tip-text">comer과 <strong>완전히 동일한 어미 패턴</strong>이에요. 어간 <span class="sp">beb-</span>에 같은 어미를 붙이면 돼요!</span>
+    </div>
+    <div class="tense-tabs">
+      <button class="tense-btn active" onclick="showTense('er_beber','pres')">현재</button>
+      <button class="tense-btn" onclick="showTense('er_beber','imp')">불완료과거</button>
+      <button class="tense-btn" onclick="showTense('er_beber','pret')">단순과거</button>
+      <button class="tense-btn" onclick="showTense('er_beber','fut')">미래</button>
+    </div>
+    <div class="tense-panel active" id="er_beber-pres">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">bebo</span></td><td class="kr">-o</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">bebes</span></td><td class="kr">-es</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">bebe</span></td><td class="kr">-e</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">bebemos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">bebéis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">beben</span></td><td class="kr">-en</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="er_beber-imp">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">bebía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">bebías</span></td><td class="kr">-ías</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">bebía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">bebíamos</span></td><td class="kr">-íamos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">bebíais</span></td><td class="kr">-íais</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">bebían</span></td><td class="kr">-ían</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="er_beber-pret">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">bebí</span></td><td class="kr">-í</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">bebiste</span></td><td class="kr">-iste</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">bebió</span></td><td class="kr">-ió</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">bebimos</span></td><td class="kr">-imos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">bebisteis</span></td><td class="kr">-isteis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">bebieron</span></td><td class="kr">-ieron</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="er_beber-fut">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">beberé</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">beberás</span></td><td class="kr">-ás</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">beberá</span></td><td class="kr">-á</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">beberemos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">beberéis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">beberán</span></td><td class="kr">-án</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- ====== IR ====== -->
+
+  <div class="verb-panel" id="vp-ir">
+    <div class="verb-selector">
+      <button class="vsel-btn ir-sel active" onclick="showVerbInst('ir','vivir',this)">
+        <span class="vsel-name">vivir</span>
+        <span class="vsel-mean">살다</span>
+      </button>
+      <button class="vsel-btn ir-sel" onclick="showVerbInst('ir','escribir',this)">
+        <span class="vsel-name">escribir</span>
+        <span class="vsel-mean">쓰다</span>
+      </button>
+    </div>
+
+```
+<!-- vivir -->
+<div class="verb-instance active" id="vi-ir-vivir">
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span class="badge badge-ir">-IR</span>
+      <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--accent4)">vivir</span>
+      <span style="font-size:12px;color:var(--text2)">살다</span>
+    </div>
+    <div class="tense-tabs">
+      <button class="tense-btn active" onclick="showTense('ir_vivir','pres')">현재</button>
+      <button class="tense-btn" onclick="showTense('ir_vivir','imp')">불완료과거</button>
+      <button class="tense-btn" onclick="showTense('ir_vivir','pret')">단순과거</button>
+      <button class="tense-btn" onclick="showTense('ir_vivir','fut')">미래</button>
+    </div>
+    <div class="tense-panel active" id="ir_vivir-pres">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">vivo</span></td><td class="kr">-o</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">vives</span></td><td class="kr">-es</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">vive</span></td><td class="kr">-e</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">vivimos</span></td><td class="kr">-imos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">vivís</span></td><td class="kr">-ís</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">viven</span></td><td class="kr">-en</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ir_vivir-imp">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">vivía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">vivías</span></td><td class="kr">-ías</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">vivía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">vivíamos</span></td><td class="kr">-íamos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">vivíais</span></td><td class="kr">-íais</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">vivían</span></td><td class="kr">-ían</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ir_vivir-pret">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">viví</span></td><td class="kr">-í</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">viviste</span></td><td class="kr">-iste</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">vivió</span></td><td class="kr">-ió</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">vivimos</span></td><td class="kr">-imos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">vivisteis</span></td><td class="kr">-isteis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">vivieron</span></td><td class="kr">-ieron</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ir_vivir-fut">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">viviré</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">vivirás</span></td><td class="kr">-ás</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">vivirá</span></td><td class="kr">-á</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">viviremos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">viviréis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">vivirán</span></td><td class="kr">-án</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- escribir -->
+<div class="verb-instance" id="vi-ir-escribir">
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span class="badge badge-ir">-IR</span>
+      <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--accent4)">escribir</span>
+      <span style="font-size:12px;color:var(--text2)">쓰다</span>
+    </div>
+    <div class="tip-box" style="margin-bottom:10px">
+      <span class="tip-icon">💡</span>
+      <span class="tip-text">vivir과 <strong>완전히 동일한 어미 패턴</strong>이에요. 어간 <span class="sp">escrib-</span>에 같은 어미를 붙이면 돼요!</span>
+    </div>
+    <div class="tense-tabs">
+      <button class="tense-btn active" onclick="showTense('ir_escrib','pres')">현재</button>
+      <button class="tense-btn" onclick="showTense('ir_escrib','imp')">불완료과거</button>
+      <button class="tense-btn" onclick="showTense('ir_escrib','pret')">단순과거</button>
+      <button class="tense-btn" onclick="showTense('ir_escrib','fut')">미래</button>
+    </div>
+    <div class="tense-panel active" id="ir_escrib-pres">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">escribo</span></td><td class="kr">-o</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">escribes</span></td><td class="kr">-es</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">escribe</span></td><td class="kr">-e</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">escribimos</span></td><td class="kr">-imos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">escribís</span></td><td class="kr">-ís</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">escriben</span></td><td class="kr">-en</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ir_escrib-imp">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">escribía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">escribías</span></td><td class="kr">-ías</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">escribía</span></td><td class="kr">-ía</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">escribíamos</span></td><td class="kr">-íamos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">escribíais</span></td><td class="kr">-íais</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">escribían</span></td><td class="kr">-ían</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ir_escrib-pret">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">escribí</span></td><td class="kr">-í</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">escribiste</span></td><td class="kr">-iste</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">escribió</span></td><td class="kr">-ió</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">escribimos</span></td><td class="kr">-imos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">escribisteis</span></td><td class="kr">-isteis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">escribieron</span></td><td class="kr">-ieron</td></tr>
+      </table>
+    </div>
+    <div class="tense-panel" id="ir_escrib-fut">
+      <table class="conj-table">
+        <tr><th>인칭</th><th>형태</th><th>어미</th></tr>
+        <tr class="row-yo"><td><span class="subj-label">yo</span></td><td><span class="sp">escribiré</span></td><td class="kr">-é</td></tr>
+        <tr class="row-tu"><td><span class="subj-label">tú</span></td><td><span class="sp">escribirás</span></td><td class="kr">-ás</td></tr>
+        <tr class="row-el"><td><span class="subj-label">él/ella</span></td><td><span class="sp">escribirá</span></td><td class="kr">-á</td></tr>
+        <tr class="row-nos"><td><span class="subj-label">nosotros</span></td><td><span class="sp">escribiremos</span></td><td class="kr">-emos</td></tr>
+        <tr class="row-vos"><td><span class="subj-label">vosotros</span></td><td><span class="sp">escribiréis</span></td><td class="kr">-éis</td></tr>
+        <tr class="row-ell"><td><span class="subj-label">ellos</span></td><td><span class="sp">escribirán</span></td><td class="kr">-án</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- ===== 불규칙 ===== -->
+
+<div class="tab-panel" id="tab-irregular">
+  <p class="section-title">주요 불규칙 동사 (현재형)</p>
+
+  <div class="tip-box">
+    <span class="tip-icon">⚡</span>
+    <span class="tip-text">불규칙 동사들은 많이 쓰이니까 통째로 외우는 게 빨라요!</span>
+  </div>
+
+  <div class="irr-verb-grid">
+
+```
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">ser</span>
+    <span class="irr-verb-mean">~이다 (본질/정체)</span>
+    <span class="badge badge-irr">불규칙</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">soy</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">eres</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">es</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">somos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">sois</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">son</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">estar</span>
+    <span class="irr-verb-mean">~이다 (상태/위치)</span>
+    <span class="badge badge-irr">불규칙</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">estoy</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">estás</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">está</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">estamos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">estáis</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">están</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">ir</span>
+    <span class="irr-verb-mean">가다</span>
+    <span class="badge badge-irr">불규칙</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">voy</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">vas</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">va</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">vamos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">vais</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">van</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">tener</span>
+    <span class="irr-verb-mean">가지다 / 있다</span>
+    <span class="badge badge-irr">불규칙</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">tengo</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">tienes</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">tiene</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">tenemos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">tenéis</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">tienen</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">hacer</span>
+    <span class="irr-verb-mean">하다 / 만들다</span>
+    <span class="badge badge-irr">불규칙</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">hago</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">haces</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">hace</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">hacemos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">hacéis</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">hacen</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">poder</span>
+    <span class="irr-verb-mean">~할 수 있다</span>
+    <span class="badge badge-irr">o→ue</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">puedo</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">puedes</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">puede</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">podemos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">podéis</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">pueden</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">querer</span>
+    <span class="irr-verb-mean">원하다 / 사랑하다</span>
+    <span class="badge badge-irr">e→ie</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">quiero</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">quieres</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">quiere</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">queremos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">queréis</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">quieren</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">venir</span>
+    <span class="irr-verb-mean">오다</span>
+    <span class="badge badge-irr">불규칙</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form">vengo</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">vienes</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">viene</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">venimos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">venís</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">vienen</div></div>
+  </div>
+</div>
+
+<div class="irr-verb-card">
+  <div class="irr-verb-header">
+    <span class="irr-verb-name">saber</span>
+    <span class="irr-verb-mean">알다</span>
+    <span class="badge badge-irr">yo 불규칙</span>
+  </div>
+  <div class="irr-conj-grid">
+    <div class="irr-conj-cell"><div class="subj">yo</div><div class="form" style="color:var(--accent1)">sé</div></div>
+    <div class="irr-conj-cell"><div class="subj">tú</div><div class="form">sabes</div></div>
+    <div class="irr-conj-cell"><div class="subj">él/ella</div><div class="form">sabe</div></div>
+    <div class="irr-conj-cell"><div class="subj">nosotros</div><div class="form">sabemos</div></div>
+    <div class="irr-conj-cell"><div class="subj">vosotros</div><div class="form">sabéis</div></div>
+    <div class="irr-conj-cell"><div class="subj">ellos</div><div class="form">saben</div></div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="accent-box">
+    <div class="accent-title">줄기모음 변화 패턴</div>
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div class="rule-text"><span class="sp">e → ie</span> : querer, poder, entender, pensar...</div>
+      <div class="rule-text"><span class="sp">o → ue</span> : poder, volver, dormir, poder...</div>
+      <div class="rule-text"><span class="sp">e → i</span> : pedir, seguir, servir... (IR동사)</div>
+    </div>
+    <div class="tip-box" style="margin-top:10px;margin-bottom:0">
+      <span class="tip-icon">⚠️</span>
+      <span class="tip-text">nosotros / vosotros는 변화 없음! (나머지 4인칭만 변화)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SER vs ESTAR ===== -->
+
+<div class="tab-panel" id="tab-serstar">
+  <p class="section-title">ser vs estar — 둘 다 "~이다"</p>
+
+  <div class="vs-grid">
+    <div class="vs-card ser">
+      <div class="vs-title">ser</div>
+      <div class="vs-subtitle">변하지 않는 것</div>
+      <ul class="vs-uses">
+        <li class="vs-use-item">국적·출신<span class="ex">Soy coreano.</span></li>
+        <li class="vs-use-item">직업<span class="ex">Es médico.</span></li>
+        <li class="vs-use-item">성격·외모<span class="ex">Es alta.</span></li>
+        <li class="vs-use-item">날짜·시간<span class="ex">Son las 3.</span></li>
+        <li class="vs-use-item">소유<span class="ex">Es de Ana.</span></li>
+        <li class="vs-use-item">재료<span class="ex">Es de madera.</span></li>
+      </ul>
+    </div>
+    <div class="vs-card estar">
+      <div class="vs-title">estar</div>
+      <div class="vs-subtitle">변하는 것</div>
+      <ul class="vs-uses">
+        <li class="vs-use-item">위치<span class="ex">Estoy en casa.</span></li>
+        <li class="vs-use-item">일시적 상태<span class="ex">Estás cansado.</span></li>
+        <li class="vs-use-item">감정·기분<span class="ex">Está feliz.</span></li>
+        <li class="vs-use-item">현재진행<span class="ex">Estoy comiendo.</span></li>
+        <li class="vs-use-item">결과 상태<span class="ex">Está cerrado.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="tip-box">
+    <span class="tip-icon">🧠</span>
+    <span class="tip-text"><strong>헷갈리는 경우!</strong> 형용사에 따라 의미가 완전히 달라져요:<br>
+    <span class="sp">Es aburrido</span> = 원래 지루한 사람<br>
+    <span class="sp">Está aburrido</span> = 지금 지루해하고 있음<br>
+    <span class="sp">Es bueno</span> = 착한 사람<br>
+    <span class="sp">Está bueno</span> = 음식이 맛있음</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">현재진행형 만들기</div>
+    <div class="rule-text" style="margin-bottom:8px">
+      <span class="sp">estar</span> + 현재분사(<span class="sp">-ando / -iendo</span>)
+    </div>
+    <div class="sentence-list">
+      <div class="sentence-item">
+        <div class="sentence-sp">Estoy hablando. <span style="font-size:11px;color:var(--text2);font-style:normal">(hablar → hablando)</span></div>
+        <div class="sentence-kr">나는 말하고 있어.</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">Está comiendo. <span style="font-size:11px;color:var(--text2);font-style:normal">(comer → comiendo)</span></div>
+        <div class="sentence-kr">그/그녀는 먹고 있어.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 전치사 ===== -->
+
+<div class="tab-panel" id="tab-prep">
+  <p class="section-title">주요 전치사</p>
+
+  <div class="prep-list">
+    <div class="prep-item">
+      <div class="prep-sp">a</div>
+      <div class="prep-content">
+        <div class="prep-kr">~에게, ~으로 (방향), ~에 (시간)</div>
+        <div class="prep-ex">Voy a Madrid. / Te llamo a las 3.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">de</div>
+      <div class="prep-content">
+        <div class="prep-kr">~의, ~에서 (출발), ~로 만든</div>
+        <div class="prep-ex">Soy de Corea. / Una taza de café.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">en</div>
+      <div class="prep-content">
+        <div class="prep-kr">~에 (위치), ~안에, ~으로 (교통)</div>
+        <div class="prep-ex">Estoy en casa. / Voy en autobús.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">con</div>
+      <div class="prep-content">
+        <div class="prep-kr">~와 함께, ~을 가지고</div>
+        <div class="prep-ex">Voy con Ana. / Café con leche.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">por</div>
+      <div class="prep-content">
+        <div class="prep-kr">~때문에, ~을 위해, ~를 통해, ~당</div>
+        <div class="prep-ex">Por favor. / Dos veces por semana.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">para</div>
+      <div class="prep-content">
+        <div class="prep-kr">~을 위해, ~에게 (목적), ~로 (목적지)</div>
+        <div class="prep-ex">Es para ti. / Salgo para Madrid.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">desde</div>
+      <div class="prep-content">
+        <div class="prep-kr">~부터 (시간·장소)</div>
+        <div class="prep-ex">Desde las 9. / Desde Madrid.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">hasta</div>
+      <div class="prep-content">
+        <div class="prep-kr">~까지 (시간·장소)</div>
+        <div class="prep-ex">Hasta las 5. / Hasta la esquina.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">sobre</div>
+      <div class="prep-content">
+        <div class="prep-kr">~위에, ~에 관하여, ~쯤</div>
+        <div class="prep-ex">Sobre la mesa. / Sobre las 8.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">entre</div>
+      <div class="prep-content">
+        <div class="prep-kr">~사이에</div>
+        <div class="prep-ex">Entre tú y yo.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">sin</div>
+      <div class="prep-content">
+        <div class="prep-kr">~없이</div>
+        <div class="prep-ex">Sin azúcar. / Sin ti.</div>
+      </div>
+    </div>
+    <div class="prep-item">
+      <div class="prep-sp">según</div>
+      <div class="prep-content">
+        <div class="prep-kr">~에 따르면</div>
+        <div class="prep-ex">Según el periódico.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="rule-box" style="border-left-color:var(--accent1)">
+    <div class="rule-title" style="color:var(--accent1)">축약형 주의!</div>
+    <div class="rule-text">
+      <span class="sp">a + el = al</span> &nbsp;(단, <span class="sp">a + él ≠ al</span>)<br>
+      <span class="sp">de + el = del</span><br>
+      예) <span class="sp">Voy al parque.</span> / <span class="sp">Es del vecino.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 숫자 ===== -->
+
+<div class="tab-panel" id="tab-numbers">
+  <p class="section-title">숫자</p>
+
+  <div class="card">
+    <div class="card-title">기수 (1–30)</div>
+    <div class="number-grid">
+      <div class="number-item"><span class="number-n">1</span><span class="number-sp">uno/una</span></div>
+      <div class="number-item"><span class="number-n">2</span><span class="number-sp">dos</span></div>
+      <div class="number-item"><span class="number-n">3</span><span class="number-sp">tres</span></div>
+      <div class="number-item"><span class="number-n">4</span><span class="number-sp">cuatro</span></div>
+      <div class="number-item"><span class="number-n">5</span><span class="number-sp">cinco</span></div>
+      <div class="number-item"><span class="number-n">6</span><span class="number-sp">seis</span></div>
+      <div class="number-item"><span class="number-n">7</span><span class="number-sp">siete</span></div>
+      <div class="number-item"><span class="number-n">8</span><span class="number-sp">ocho</span></div>
+      <div class="number-item"><span class="number-n">9</span><span class="number-sp">nueve</span></div>
+      <div class="number-item"><span class="number-n">10</span><span class="number-sp">diez</span></div>
+      <div class="number-item"><span class="number-n">11</span><span class="number-sp">once</span></div>
+      <div class="number-item"><span class="number-n">12</span><span class="number-sp">doce</span></div>
+      <div class="number-item"><span class="number-n">13</span><span class="number-sp">trece</span></div>
+      <div class="number-item"><span class="number-n">14</span><span class="number-sp">catorce</span></div>
+      <div class="number-item"><span class="number-n">15</span><span class="number-sp">quince</span></div>
+      <div class="number-item"><span class="number-n">16</span><span class="number-sp">dieciséis</span></div>
+      <div class="number-item"><span class="number-n">17</span><span class="number-sp">diecisiete</span></div>
+      <div class="number-item"><span class="number-n">18</span><span class="number-sp">dieciocho</span></div>
+      <div class="number-item"><span class="number-n">19</span><span class="number-sp">diecinueve</span></div>
+      <div class="number-item"><span class="number-n">20</span><span class="number-sp">veinte</span></div>
+      <div class="number-item"><span class="number-n">21</span><span class="number-sp">veintiuno</span></div>
+      <div class="number-item"><span class="number-n">22</span><span class="number-sp">veintidós</span></div>
+      <div class="number-item"><span class="number-n">25</span><span class="number-sp">veinticinco</span></div>
+      <div class="number-item"><span class="number-n">30</span><span class="number-sp">treinta</span></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <div class="card-title">십·백·천 단위</div>
+    <div class="number-grid">
+      <div class="number-item"><span class="number-n">40</span><span class="number-sp">cuarenta</span></div>
+      <div class="number-item"><span class="number-n">50</span><span class="number-sp">cincuenta</span></div>
+      <div class="number-item"><span class="number-n">60</span><span class="number-sp">sesenta</span></div>
+      <div class="number-item"><span class="number-n">70</span><span class="number-sp">setenta</span></div>
+      <div class="number-item"><span class="number-n">80</span><span class="number-sp">ochenta</span></div>
+      <div class="number-item"><span class="number-n">90</span><span class="number-sp">noventa</span></div>
+      <div class="number-item"><span class="number-n">100</span><span class="number-sp">cien</span></div>
+      <div class="number-item"><span class="number-n">101</span><span class="number-sp">ciento uno</span></div>
+      <div class="number-item"><span class="number-n">200</span><span class="number-sp">doscientos</span></div>
+      <div class="number-item"><span class="number-n">500</span><span class="number-sp">quinientos</span></div>
+      <div class="number-item"><span class="number-n">1000</span><span class="number-sp">mil</span></div>
+      <div class="number-item"><span class="number-n">1000000</span><span class="number-sp">un millón</span></div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <span class="tip-icon">💡</span>
+    <span class="tip-text"><strong>31 이상은</strong> "십단위 + y + 일단위" 형식: <span class="sp">treinta y uno</span> (31), <span class="sp">cuarenta y dos</span> (42)</span>
+  </div>
+</div>
+
+<!-- ===== 더보기 ===== -->
+
+<div class="tab-panel" id="tab-extra">
+  <p class="section-title">초보자를 위한 추가 문법</p>
+
+  <!-- 형용사 -->
+
+  <div class="card">
+    <div class="card-title">형용사 일치</div>
+    <div class="rule-text" style="margin-bottom:8px">형용사는 명사의 성·수에 맞춰 변해요!</div>
+    <table class="conj-table">
+      <tr><th></th><th>남성</th><th>여성</th></tr>
+      <tr><td class="kr">단수</td><td><span class="sp">alto</span></td><td><span class="sp">alta</span></td></tr>
+      <tr><td class="kr">복수</td><td><span class="sp">altos</span></td><td><span class="sp">altas</span></td></tr>
+    </table>
+    <div class="tip-box" style="margin-top:10px;margin-bottom:0">
+      <span class="tip-icon">📝</span>
+      <span class="tip-text"><span class="sp">-e</span>나 자음으로 끝나는 형용사는 남녀 구별 없음: <span class="sp">inteligente / inteligentes</span></span>
+    </div>
+  </div>
+
+  <!-- 부정문 -->
+
+  <div class="card">
+    <div class="card-title">부정문</div>
+    <div class="rule-text" style="margin-bottom:10px">동사 앞에 <span class="sp" style="color:var(--accent1);font-size:16px">no</span>만 붙이면 끝!</div>
+    <div class="sentence-list">
+      <div class="sentence-item">
+        <div class="sentence-sp">No hablo inglés.</div>
+        <div class="sentence-kr">나는 영어를 못 해요.</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">No tengo hambre.</div>
+        <div class="sentence-kr">나는 배고프지 않아요.</div>
+      </div>
+    </div>
+    <div class="rule-box" style="margin-top:10px;margin-bottom:0">
+      <div class="rule-title">이중부정 (Spanish style)</div>
+      <div class="rule-text">
+        <span class="sp">No como nada.</span> → 나는 아무것도 안 먹어.<br>
+        <span class="sp">nada</span>(아무것도), <span class="sp">nadie</span>(아무도), <span class="sp">nunca</span>(절대 ~않다)
+      </div>
+    </div>
+  </div>
+
+  <!-- hay -->
+
+  <div class="card">
+    <div class="card-title">hay — "있다"</div>
+    <div class="rule-text" style="margin-bottom:10px"><span class="sp">hay</span> = there is / there are. 단수·복수 모두 같은 형태!</div>
+    <div class="sentence-list">
+      <div class="sentence-item">
+        <div class="sentence-sp">Hay un libro en la mesa.</div>
+        <div class="sentence-kr">테이블 위에 책이 한 권 있어요.</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">Hay muchas personas aquí.</div>
+        <div class="sentence-kr">여기에 사람이 많이 있어요.</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">No hay problema.</div>
+        <div class="sentence-kr">문제없어요. (괜찮아요)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- gustar -->
+
+  <div class="card">
+    <div class="card-title">gustar — "좋아하다"</div>
+    <div class="tip-box" style="margin-bottom:10px">
+      <span class="tip-icon">⚡</span>
+      <span class="tip-text">영어와 반대 구조! 주어가 좋아하는 <strong>대상</strong>이 돼요: <strong>나에게 ~이 마음에 들다</strong></span>
+    </div>
+    <table class="conj-table">
+      <tr><th>간접목적격</th><th>gustar 형태</th><th>대상</th></tr>
+      <tr><td><span class="sp">Me</span><span class="kr"> (나에게)</span></td><td><span class="sp">gusta</span></td><td class="kr">단수 명사/동사원형</td></tr>
+      <tr><td><span class="sp">Te</span><span class="kr"> (너에게)</span></td><td><span class="sp">gustan</span></td><td class="kr">복수 명사</td></tr>
+      <tr><td><span class="sp">Le</span><span class="kr"> (그/그녀에게)</span></td><td></td><td></td></tr>
+      <tr><td><span class="sp">Nos</span><span class="kr"> (우리에게)</span></td><td></td><td></td></tr>
+      <tr><td><span class="sp">Os</span><span class="kr"> (너희에게)</span></td><td></td><td></td></tr>
+      <tr><td><span class="sp">Les</span><span class="kr"> (그들에게)</span></td><td></td><td></td></tr>
+    </table>
+    <div class="sentence-list" style="margin-top:10px">
+      <div class="sentence-item">
+        <div class="sentence-sp">Me gusta el café.</div>
+        <div class="sentence-kr">나는 커피를 좋아해요. (나에게 커피가 마음에 들어)</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">Me gustan los perros.</div>
+        <div class="sentence-kr">나는 개를 좋아해요. (복수 → gustan)</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">¿Te gusta bailar?</div>
+        <div class="sentence-kr">춤추는 거 좋아해?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 시간 표현 -->
+
+  <div class="card">
+    <div class="card-title">시간 말하기</div>
+    <div class="sentence-list">
+      <div class="sentence-item">
+        <div class="sentence-sp">¿Qué hora es?</div>
+        <div class="sentence-kr">몇 시예요?</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">Es la una.</div>
+        <div class="sentence-kr">1시예요. (una → 여성단수 → es)</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">Son las tres y media.</div>
+        <div class="sentence-kr">3시 반이에요.</div>
+      </div>
+      <div class="sentence-item">
+        <div class="sentence-sp">Son las dos menos cuarto.</div>
+        <div class="sentence-kr">1시 45분이에요. (2시 15분 전)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 날씨 -->
+
+  <div class="card">
+    <div class="card-title">날씨 표현</div>
+    <div class="sentence-list">
+      <div class="sentence-item"><div class="sentence-sp">Hace calor / frío.</div><div class="sentence-kr">더워요 / 추워요.</div></div>
+      <div class="sentence-item"><div class="sentence-sp">Hace sol / viento.</div><div class="sentence-kr">맑아요 / 바람 불어요.</div></div>
+      <div class="sentence-item"><div class="sentence-sp">Llueve. / Está lloviendo.</div><div class="sentence-kr">비가 와요 / 오고 있어요.</div></div>
+      <div class="sentence-item"><div class="sentence-sp">Nieva. / Está nevando.</div><div class="sentence-kr">눈이 와요 / 오고 있어요.</div></div>
+      <div class="sentence-item"><div class="sentence-sp">¿Qué tiempo hace?</div><div class="sentence-kr">날씨가 어때요?</div></div>
+    </div>
+  </div>
+
+  <!-- 자주쓰는 표현 -->
+
+  <div class="card">
+    <div class="card-title">자주 쓰는 표현 모음</div>
+    <div class="prep-list">
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">Por favor</div><div class="prep-content"><div class="prep-kr">부탁합니다</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">Gracias</div><div class="prep-content"><div class="prep-kr">감사합니다</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">De nada</div><div class="prep-content"><div class="prep-kr">천만에요</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">Lo siento</div><div class="prep-content"><div class="prep-kr">미안해요</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">Perdón</div><div class="prep-content"><div class="prep-kr">실례합니다 / 죄송해요</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">No entiendo</div><div class="prep-content"><div class="prep-kr">이해 못 했어요</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">¿Cómo se dice?</div><div class="prep-content"><div class="prep-kr">~를 어떻게 말해요?</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">Más despacio</div><div class="prep-content"><div class="prep-kr">더 천천히 (말해주세요)</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">¿Hablas inglés?</div><div class="prep-content"><div class="prep-kr">영어 할 줄 알아요?</div></div></div>
+      <div class="prep-item"><div class="prep-sp" style="color:var(--accent5);min-width:80px">¡Buena suerte!</div><div class="prep-content"><div class="prep-kr">행운을 빌어요!</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /content -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function showVerb(type) {
+  document.querySelectorAll('.verb-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.verb-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('vp-' + type).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function showVerbInst(group, verbId, btn) {
+  const panel = document.getElementById('vp-' + group);
+  panel.querySelectorAll('.verb-instance').forEach(p => p.classList.remove('active'));
+  panel.querySelectorAll('.vsel-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('vi-' + group + '-' + verbId).classList.add('active');
+  btn.classList.add('active');
+}
+
+function showTense(verb, tense) {
+  // Find the active verb instance that contains this tense panel
+  const panel = document.getElementById(verb + '-' + tense);
+  if (!panel) return;
+  const instance = panel.closest('.verb-instance') || panel.closest('.card');
+  if (instance) {
+    instance.querySelectorAll('.tense-panel').forEach(p => p.classList.remove('active'));
+    instance.querySelectorAll('.tense-btn').forEach(b => b.classList.remove('active'));
+  }
+  panel.classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
+
+</body>
+</html>
